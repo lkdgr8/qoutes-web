@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0; padding: 0; box-sizing: border-box;">
+    <div style="display: flex; flex-direction: column; width: 100vw; height: 100vh; align-items: center; justify-content: center;">
+        <div id="qoutes"></div><br>
+        <div id="author"></div><br>
+        <button style="padding: 10px 15px; background-color: blue; color: #fff; width:fit-content; border: 1px solid; border-radius: 25px; cursor: pointer;" onclick="randomNo()">generate new qoute</button>
+    </div>
+
+    <script>
+        const qoutes = document.getElementById("qoutes");   
+        const author = document.getElementById("author");   
+        let dataSet = "";
+        let rn = 0;
+        qoutesData = ""
+        const new_qoutes = () => {
+          rn = Math.floor(Math.random() * 1000);
+          qoutesData = dataSet[rn]
+          qoutes.innerText = `${qoutesData.text}`;
+          qoutesData.author === null ? 
+          author.innerText = "unbknown" :
+          author.innerText = `${"- - " + qoutesData.author}`;
+        }
+
+        const get_qoutes = async () => {
+            const url = "https://type.fit/api/quotes";
+            try {
+            let data = await fetch(url);
+            dataSet = await data.json();
+            new_qoutes()
+         }  catch (error) {}
+        }
+        const randomNo = () => {
+            get_qoutes()
+        }
+
+        get_qoutes()
+    </script>
+</body>
+</html>
