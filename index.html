@@ -7,16 +7,14 @@
     <title>Document</title>
 </head>
 <body style="margin: 0; padding: 0; box-sizing: border-box;">
-    <div style="display: flex; flex-direction: column; width: 100vw; height: 100vh; align-items: center; justify-content: center;">
+    <div class="container" style="display: flex; flex-direction: column; width: 100vw; height: 100vh; align-items: center; justify-content: center;">
         <div id="qoutes"></div><br>
         <div id="author"></div><br>
         <button style="padding: 10px 15px; background-color: blue; color: #fff; width:fit-content; border: 1px solid; border-radius: 25px; cursor: pointer;" onclick="randomNo()">generate new qoute</button>
     </div>
    <style>
-       @media (max-width: 767px){
-       body:nth-child(1){
-          margin: 0 10px;   
-       }
+      .container{
+          margin: 0 10px;
        }
     </style>
     <script>
