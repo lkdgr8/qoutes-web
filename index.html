@@ -12,7 +12,13 @@
         <div id="author"></div><br>
         <button style="padding: 10px 15px; background-color: blue; color: #fff; width:fit-content; border: 1px solid; border-radius: 25px; cursor: pointer;" onclick="randomNo()">generate new qoute</button>
     </div>
-
+   <style>
+       @media (max-width: 767px){
+       body:nth-child(1){
+          margin: 0 10px;   
+       }
+       }
+    </style>
     <script>
         const qoutes = document.getElementById("qoutes");   
         const author = document.getElementById("author");   
